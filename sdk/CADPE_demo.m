@@ -4,7 +4,7 @@
 % The ability to load nrrd requires libteem to be installed.
 % http://teem.sourceforge.net/index.html
 % Please add the path to nrrdLoad in the following line
-addpath('../teem');
+%addpath('../teem');
 
 addpath('sparse');
 

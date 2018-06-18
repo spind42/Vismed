@@ -457,8 +457,10 @@ classdef ndSparse
      
     function objnew=subsref(obj,S)
     %subsref - same indexing rules as for full arrays
-    
+        %S.subs
+        
         if isempty(S.subs)
+        %if cellfun(@isempty, S.subs)
             objnew=obj; return
         end
     
