@@ -457,16 +457,14 @@ classdef ndSparse
      
     function objnew=subsref(obj,S)
     %subsref - same indexing rules as for full arrays
-        %S.subs
-        
+    
         if isempty(S.subs)
-        %if cellfun(@isempty, S.subs)
             objnew=obj; return
         end
     
 
         
-        [E,targetshape,kk,other]=nd2matrixIndex(S.subs,obj.ndShape,'subsref');
+        [E,targetshape,~,other]=nd2matrixIndex(S.subs,obj.ndShape,'subsref');
 
         
         if  other.boolConsol 
@@ -2511,7 +2509,8 @@ end
  
      N=length(ndSubs);
      [ndShape, numdims]=untrail1s(ndShape);
-
+    
+     
      [objIs1D,obj1Ddim]=proc1D(ndShape);
      
      LinearIndexing=(N==1);
@@ -3225,7 +3224,7 @@ function  [bool,dim] = proc1D(sz)
  if ~bool
     dim=[];
  elseif ldim==0 %means the object is a scalar
-     dim=dim(1);
+     dim=1;
  end
  
 

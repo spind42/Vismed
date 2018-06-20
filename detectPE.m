@@ -1,15 +1,22 @@
-ptk_main = PTKMain();
+%ptk_main = PTKMain();
 
-V = dicomreadVolume('001');
+%V = dicomreadVolume('001');
 
-dataset = ptk_main.Load('001');
+%dataset = ptk_main.Load('001');
+%dataset2 = ptk_main.Load('002');
 
-lobes = dataset.GetResult('PTKLeftAndRightLungs');
+%lobes = dataset.GetResult('PTKLeftAndRightLungs');
 
-vesselness = dataset.GetResult('PTKVesselness');
+%vessels = dataset.GetResult('PTKVesselness');
+%vessels2 = dataset2.GetResult('PTKVesselness');
 
-PTKViewer(lobes);
-PTKViewer(vesselness);
+%dilated = dataset.GetResult('PTKVesselnessDilated');
+
+%PTKVisualiseIn3D([], vessels2, 2, true);
+
+
+%PTKViewer(lobes);
+%PTKViewer(vesselness);
 %ct_image = dataset.GetResult('PTKLungROI');
 %image_viewer = PTKViewer(ct_image);
 %image_viewer.ViewerPanelHandle.Window = 1600;
@@ -20,5 +27,8 @@ PTKViewer(vesselness);
 %smoothing_size_mm = 4;
 %PTKVisualiseIn3D([], lobes, smoothing_size_mm, false);
 %PTKVisualiseIn3D([], vesselness, smoothing_size_mm, false);
+
+
+
 
 

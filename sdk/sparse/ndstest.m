@@ -328,6 +328,7 @@ Error(end+1)= err( Pf(P<.5) ,  Pf(Pf<.5)   );
 Error(end+1)= err( P(Pf<.5) ,  Pf(Pf<.5)   );
 
 Error(end+1)= err( P(:) ,  Pf(:)   );  %linear indexing
+Error(end+1)= err( P(1) ,  Pf(1)   );  
 Error(end+1)= err( P(1:4) ,  Pf(1:4)   );
 Error(end+1)= err( P((1:4).') ,  Pf((1:4).')   );
 Error(end+1)= err( Vc(1:3) ,  Vcf(1:3)   );
@@ -367,6 +368,13 @@ Error(end+1)= err( P(lidx,:,lidx) ,  Pf(lidx,:,lidx)   );
        
         
 Error(end+1)= err(  Z, Zf); %logical indexing
+
+        Z(1)=7;   Zf(1)=7;
+       
+        
+Error(end+1)= err(  Z, Zf); %scalar indexing
+
+
 
         Z(Zf<.5)=13; Zf(Zf<.5)=13;
        

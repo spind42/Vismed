@@ -13,6 +13,10 @@ rs = load('sdk/Data/rs.mat');
 
 m1 = rs.rs.mask{1};
 
+%over = full(m1);
+
+
+
 %volume = mask1.full();
 
 
